@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Simple, traffic-based pricing</h1>
+      <span>Sign-up for our 30-day trial. No credit card required.</span>
+    </div>
+
+    <div class="card">
+      <div class="pricing-content">
+        <span>100k Pageviews</span>
+        <div>
+          <span id="price">$<output id="range-value"></output>.00</span>/month
+        </div>
+      </div>
+      <div class="slide-container">
+        <input type="range" id="myRange" max="32" min="1" value="16">
+        <span class="range-slider"></span>
+      </div>
+      <div class="billing">
+        <label for="check">Monthly Billing
+          <input type="checkbox" id="check">
+          <span class="checkmark"></span>
+        </label>
+        <span class="year-bill">Yearly Billing</span>
+      </div>
+
+      <div class="box-two">
+        <div class="box-content">
+          <span>Unlimited websites</span>
+          <span>100% data ownership</span>
+          <span>Email reports</span>
+        </div>
+        <button> Start my trial</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Paul Adekomi</a>.
+  </div>
+  <script>
+    const rangeInput = document.getElementById("myRange");
+    const rangeValue = document.getElementById('range-value');
+
+    rangeValue.innerHTML = rangeInput.value;
+    rangeInput.addEventListener("input", () => {
+      rangeValue.innerHTML = rangeInput.value;
+      rangeInput.style.backgroundSize = rangeInput.value / 32 * 100 + "% 100%";
+
+    })
+  </script>
+</body>
+
+</html>
